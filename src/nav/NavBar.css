@@ -1,0 +1,73 @@
+#logoBlob {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6vw;
+    min-width: 80px;
+    height: 100%;
+    padding: 0;
+    /* border-radius: 0 150px 600px 0 / 0 185px 400px 0; */
+    border-radius: 0;
+    border-bottom-right-radius: 1rem;
+    /* border-bottom-right-radius: 40rem 19rem;
+    border-top-right-radius: 14rem 30rem;
+    border-bottom-left-radius: 40rem 9rem; */
+    transition: transform 200ms ease-in;
+}
+
+#logoText {
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: inherit;
+    min-width: 250px;
+    height: inherit;
+    float: right;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+#navBlob {
+    width: 18vw;
+    min-width: 250px;
+    height: 100%;
+    padding: 0;
+    /* border-radius: 150px 0 0 600px / 185px 0 0 400px; */
+    border-radius: 0;
+    border-bottom-left-radius: 1rem;
+}
+
+li {
+    display: inline;
+    text-decoration: none;
+    color: black;
+    transition: transform 200ms ease-in;
+}
+
+.sticky {
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100vw;
+    height: 6vh;
+    justify-content: space-between;
+    font-size: 1rem;
+    z-index: 1;
+  }
+
+li:hover {
+    transform: scale(1.06);
+}
+
+#logoBlob:hover {
+    transform: scale(1.04);
+}
+
+
+  

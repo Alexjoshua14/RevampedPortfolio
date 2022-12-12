@@ -1,0 +1,19 @@
+.portfolioWrapper {
+    position: relative;
+    display: flex;
+    flex: column;
+    height: 100%;
+    width: 80vw;
+    
+}
+
+#portfolioGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 18rem));
+    grid-template-rows: repeat(auto-fill, 2fr);
+    gap: 2rem;
+    padding: 6vh 0;
+    height: min-content;
+    justify-content: center;
+}

@@ -1,0 +1,61 @@
+/* #welcomeCard {
+    border-radius: 1rem;
+    padding: 5vh 5vw;
+    width: 100vw;
+    height: 70vh;
+} 
+
+#mainContent {
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.selfieHolder {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 40%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.selfieImg {
+    width: 100%;
+    height: auto;
+}*/
+
+#mainContent {
+    display: flex;
+    width: 70vw;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#welcomeCard {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 1rem;
+    width: 60%;
+    min-height: 20vh;
+}
+
+.selfieHolder {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 40%;
+    overflow: hidden;
+}
+
+.selfieImg {
+    width: 100%;
+    height: auto;
+}
