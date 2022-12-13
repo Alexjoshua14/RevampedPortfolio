@@ -9,18 +9,21 @@ export default function ContactPage() {
 
     return (
         <>
-            <div className="glassCard" id="mainContent">
-                <h1 id="title">Say hey!</h1>
-                <form onSubmit={handleSubmit}>
-                    <label id="name">Name</label>
-                    <input type="text" id="name"></input>
-                    
-                    <label id="email">Email</label>
-                    <input type="text" id="email"></input>
-                    <label id="msgLabel">Message</label>
-                    <textarea type="text" wrap="soft"></textarea>
-                    <button type="submit" id="send">Send</button>
-                </form>
+            <div className="mainContent" >
+                <div className="glassCard" id="contactContent">
+                    <h1 id="title">Say hey!</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label id="name">Name</label>
+                        <input type="text" id="name"></input>
+                        
+                        <label id="email">Email</label>
+                        <input type="text" id="email"></input>
+                        <label id="msgLabel">Message</label>
+                        <textarea type="text" wrap="soft"></textarea>
+                        <button type="submit" id="send">Send</button>
+                    </form>
+                </div>
+                <Social />
             </div>
         </>
     );

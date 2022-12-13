@@ -1,11 +1,14 @@
-#mainContent {
+#skillsContent {
     display: grid;
+    margin-bottom: 6vh;
 }
 
 #title {
     grid-column: 1 / 3;
     grid-row: 1;
     height: 100%;
+
+    text-align: center;
 }
 
 .skills {
@@ -22,20 +25,21 @@
 
 
 
-#mainContent h2 {
+#skillsContent h2 {
     text-align: center;
 }
 
-#mainContent ul {
+#skillsContent ul {
     display: flex;
     flex-direction: column;
 }
 
 @media only screen and (min-width: 751px) {
-    #mainContent {
+    #skillsContent {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 4fr;
         height: min-content;
+        column-gap: 10vw;
     }
 
     #csci {
@@ -51,8 +55,7 @@
 }
 
 @media only screen and (max-width: 750px) {
-    #mainContent {
-        margin-top: 10vh;
+    #skillsContent {
         width: 75%;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 4fr 4fr;

@@ -29,7 +29,9 @@ export default function AboutPage() {
                         </p>
                     </div>
                 </div>
+                <Social />
             </div>
+            
         </>
     )
 }

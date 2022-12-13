@@ -3,7 +3,7 @@
 import './Portfolio.css';
 import Card from '../components/Card';
 import AbstractFace from '../img/AbstractFaces.png';
-import { useNavigate } from 'react-router-dom';
+import Social from '../socialLinks/social';
 
 export default function Portfolio() {
 
@@ -13,6 +13,7 @@ export default function Portfolio() {
             <div id="portfolioGrid">  
                 {fillGrid()}
             </div>
+            <Social />
         </div> 
         </>
     )

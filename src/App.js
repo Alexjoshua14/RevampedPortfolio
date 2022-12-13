@@ -21,7 +21,7 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </main>
-      <Social />
+      {/* <Social /> */}
     </div>
   );
 }

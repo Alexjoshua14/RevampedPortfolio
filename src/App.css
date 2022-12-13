@@ -7,9 +7,18 @@
 #content {
   display: flex;
   flex-grow: 1;
-  margin: 6vh 0;
+  margin-top: 6vh;
+  padding-top: 6vh;
   min-height: fit-content;
   justify-content: center;
+}
+
+.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: inherit;
+    justify-content: center;
+    align-items: center;
 }
 
 .glassCard {
