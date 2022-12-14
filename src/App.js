@@ -5,8 +5,8 @@ import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import SkillsPage from './pages/SkillsPage';
 import NavBar from './nav/NavBar';
-import Social from './socialLinks/social.js';
 import Portfolio from './pages/Portfolio';
+import UnderConstruction from './pages/UnderConstruction';
 
 export default function App() {
   return (
@@ -18,10 +18,9 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio" element={<UnderConstruction />} />
         </Routes>
       </main>
-      {/* <Social /> */}
     </div>
   );
 }
