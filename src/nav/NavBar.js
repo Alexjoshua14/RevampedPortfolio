@@ -31,6 +31,17 @@ export default function NavBar() {
         }
     }
 
+    function navOptions() {
+        return(
+            <ul>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/skills">Skills</Link></li>
+                <li><Link to="/portfolio">Artwork</Link></li>
+            </ul>
+        )
+    }
+
     return (
         <div className="sticky">
             <Link to="/">
@@ -40,24 +51,13 @@ export default function NavBar() {
             </Link>
             <nav>
                 <div className="glassCard navBlob" id="navBlobLarge">
-                    <ul>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/skills">Skills</Link></li>
-                        <li><Link to="/portfolio">Artwork</Link></li>
-                    </ul>
+                    {navOptions()}
                 </div>
                 <div className="glassCard navBlob" id="navBlobSmall">
-                    <a onClick={displayNav}>
+                    {/* <a onClick={displayNav}>
                         <i className="fa fa-bars" />
-                    </a>
-
-                    <ul id="navLinks">
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/skills">Skills</Link></li>
-                        <li><Link to="/portfolio">Artwork</Link></li>
-                    </ul>
+                    </a> */}
+                    {navOptions()}
                 </div>
             </nav>
       </div>
