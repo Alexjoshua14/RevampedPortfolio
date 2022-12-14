@@ -42,16 +42,16 @@ export default function ContactPage() {
                     <h1 id="title">Say hey!</h1>
                     <form onSubmit={handleSubmit}>
                         <label id="name">Name</label>
-                        <input type="text" name="name" value={toSend["name"]} onChange={handleChange} required></input>
+                        <input type="text" name="name" value={toSend["name"]} onChange={handleChange} aria-required="true" required></input>
                         
                         <label id="email">Email</label>
-                        <input type="text" name="email" value={toSend["email"]} onChange={handleChange} required></input>
+                        <input type="email" name="email" value={toSend["email"]} onChange={handleChange} aria-required="true" required></input>
 
                         <label id="msgLabel">Message</label>
-                        <textarea type="text" wrap="soft" name="message" value={toSend["message"]} onChange={handleChange} required></textarea>
+                        <textarea type="text" wrap="soft" name="message" value={toSend["message"]} onChange={handleChange} aria-required="true" required></textarea>
 
                         <button type="submit" id="send">Send</button>
-                    </form>
+                    </form> 
                 </div>
                 <Social />
             </div>
