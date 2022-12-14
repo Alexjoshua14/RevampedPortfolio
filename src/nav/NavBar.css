@@ -33,21 +33,68 @@ ul {
     z-index: 1;
 }
 
-#navBlob {
-    width: 18vw;
-    min-width: 250px;
-    height: 100%;
-    padding: 0;
-    /* border-radius: 150px 0 0 600px / 185px 0 0 400px; */
-    border-radius: 0;
-    border-bottom-left-radius: 1rem;
-}
-
 li {
     display: inline;
     text-decoration: none;
     color: black;
     transition: transform 200ms ease-in;
+}
+
+.navBlob {
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 1rem;
+}
+
+#navBlobLarge {
+    width: 40vw;
+    min-width: 250px;
+}
+
+/* Collapsed */
+#navBlobSmall {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    width: 60px;
+    height: min-content;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#navBlobSmall ul {
+    display: none;
+}
+
+/* #navBlobSmall {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    height: min-content;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--dark);
+    color: var(--white);
+} */
+
+#navBlobSmall ul {
+    flex-direction: column;
+    width: inherit;
+    text-align: center;
+    row-gap: .4rem;
+    padding: .8rem 0;
+}
+
+#navBlobSmall li {
+    width: 100%;
+    color: var(--white);
+}
+
+#navBlobSmall li:hover {
+    transform: scale(1.04)
 }
 
 .sticky {
@@ -69,5 +116,33 @@ li:hover {
     transform: scale(1.04);
 }
 
+@media only screen and (max-width: 600px) {
+    #logoBlob {
+        width: 20vw;
+        min-width: none;
+    }
 
+    #navBlobLarge {
+        width: 70vw;
+    }
+}
+
+/* 
+@media only screen and (max-width: 600px) {
+    #logoBlob {
+        width: 25vw;
+        min-width: none;
+    }
+
+    #navBlobLarge {
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 601px) {
+    #navBlobSmall {
+        display: none;
+    }
+} */
   

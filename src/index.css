@@ -1,5 +1,6 @@
 :root {
   --dark: #121212;
+  --white: #FFFFFF;
   --blue: #77B6EA;
   --pink: #FF007F;
   --teal: #3ADFB5;
@@ -7,12 +8,11 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background: linear-gradient(-45deg, #573280, #FF007F, #77B6EA, #3ADFB5);
 	background-size: 400% 400%;
   min-height: 100vh;
@@ -65,4 +65,11 @@ a:-webkit-any-link {
 .b3 {
   background: var(--teal);
   background-blend-mode: color-dodge;
+}
+
+@supports(padding:max(0px)) {
+  body, header, footer {
+    padding-left: min(0vmin, env(safe-area-inset-left));
+    padding-right: min(0vmin, env(safe-area-inset-right));
+  }
 }

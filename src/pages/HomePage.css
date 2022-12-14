@@ -29,11 +29,16 @@
 }*/
 
 #welcomeCard {
-    position: fixed;
-    text-align: center;
-    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     width: 60%;
     min-height: 20vh;
+    height: min-content;
+    text-align: center;
+    margin-bottom: 6vh;
 }
 
 .selfieHolder {
