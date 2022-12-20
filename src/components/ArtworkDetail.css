@@ -1,0 +1,30 @@
+.ArtworkCardWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    height: 70vh;
+    width: inherit;
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+.artwork {
+    max-height: 100%;
+    overflow: hidden;
+    padding-bottom: 10%;
+}
+
+.artwork img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.artworkDesc {
+    height: inherit;
+    width: inherit;
+    padding: 1rem;
+}
