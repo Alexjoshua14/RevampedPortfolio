@@ -29,7 +29,7 @@ export default function ContactPage() {
         )
             .then((response) => {
                 console.log('Email sent!', response.status, response.text);
-                window.location.reload();
+                setToSend({name: "", message: "", email: ""});
             }).catch((err) => {
                 console.log('Email failed to send..', err);  
             });

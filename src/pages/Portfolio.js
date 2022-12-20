@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import './Portfolio.css';
 import Card from '../components/Card';
+import ArtworkDetail from '../components/ArtworkDetail';
 import CardDetails from '../components/CardDetails';
 import AbstractFace from '../img/AbstractFaces.png';
 import Social from '../socialLinks/social';
@@ -47,7 +48,7 @@ export default function Portfolio() {
                 {fillGrid()} 
             </div>
             <div id="detailsContainer" onClick={() => showDetails(false)}>
-                    <Card key={details.id} title={details.title} src={details.src} date={details.date} med={details.med} desc={details.desc} handleClick={() => showDetails}/>    
+                    <ArtworkDetail key={details.id} title={details.title} src={details.src} date={details.date} med={details.med} desc={details.desc} handleClick={() => showDetails}/>    
             </div>
             <Social />
         </div> 
