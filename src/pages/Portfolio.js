@@ -1,15 +1,28 @@
 // Alex Joshua (c) 2022
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Portfolio.css';
 import Card from '../components/Card';
 import ArtworkDetail from '../components/ArtworkDetail';
 import CardDetails from '../components/CardDetails';
 import AbstractFace from '../img/AbstractFaces.png';
 import Social from '../socialLinks/social';
+//import getSecrets from '../utilities/databaseFunctions.js';
 
 export default function Portfolio() {
-    
+    // getSecrets();
+    const [backendData, setBackendData] = useState([{}]);
+
+    useEffect(() => {
+        fetch("/api").then(
+            response => response.json()
+        ).then(
+            data => {
+                setBackendData(data);
+            }
+        )
+    }, [])
+
     const details = {
         id: 0,
         title: "sda",
@@ -42,8 +55,12 @@ export default function Portfolio() {
 
     return (
         <>
+        
         <div className="portfolioWrapper">
-            
+            {(typeof backendData.artworks === 'undefined') ? 
+                    <h1>loading</h1> : 
+                    backendData.artworks.map((art, i) => 
+                        { <p>{art}</p>})}
             <div id="portfolioGrid"> 
                 {fillGrid()} 
             </div>
@@ -61,8 +78,8 @@ export default function Portfolio() {
 
         const cardSelect = (artInfo) => {
             
-            updateDetails(artInfo);
-            showDetails(true);
+            //updateDetails(artInfo);
+            // showDetails(true);
 
             // console.log("A card has been selected!!")
             // console.log("Specifics: " + id);
@@ -76,19 +93,19 @@ export default function Portfolio() {
     
         var imgs = [
             {id: 1,
-            title: "Abstract Faces",
-             src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+            title: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[0].title,
+             src: "https://alexjoshuaartwork.s3.us-west-1.amazonaws.com/UploadToAWS/Idea.png",
              date: "September 1, 2022",
-             med: "Pencil Sketch",
+             med: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[0].medium,
              desc: "Description of the art"},
             {id: 2,
-            title: "Abstract Faces",
-             src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+            title:(typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[1].title,
+             src: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[0].thumbnail,
              date: "September 1, 2022",
              med: "Pencil Sketch",
              desc: "Description of the art"},
             {id: 3,
-            title: "Abstract Faces",
+            title: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[2].title,
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
