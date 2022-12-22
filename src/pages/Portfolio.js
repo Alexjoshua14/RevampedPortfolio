@@ -5,44 +5,34 @@ import './Portfolio.css';
 import Card from '../components/Card';
 import ArtworkDetail from '../components/ArtworkDetail';
 import CardDetails from '../components/CardDetails';
-import AbstractFace from '../img/AbstractFaces.png';
 import Social from '../socialLinks/social';
-//import getSecrets from '../utilities/databaseFunctions.js';
+import { getData, getImage } from "../utilities/databaseFunctions";
 
 export default function Portfolio() {
-    // getSecrets();
-    const [backendData, setBackendData] = useState([{}]);
-
+    const [backendData, setBackendData] = useState(null);
+    const [imageData, setImageData] = useState(null);
+    const [detailShown, showDetails] = useState(false);
     useEffect(() => {
-        fetch("/api").then(
-            response => response.json()
-        ).then(
+        console.log("Running use Effect");
+        getData().then(
             data => {
                 setBackendData(data);
             }
-        )
-    }, [])
+        );
+        getImage('UploadToAWS/Untitled6.jpeg').then(data => {
+            setImageData(URL.createObjectURL(data));
+        })
 
-    const details = {
+    }, []);
+
+    const [details, updateDetails] = useState({
         id: 0,
         title: "sda",
         src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
         date: "asdas",
         med: "asdsa",
         desc: "asdsa"
-    }
-
-    function updateDetails() {}
-    // const [details, updateDetails] = useState({
-    //     id: 0,
-    //     title: "sda",
-    //      src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    //      date: "asdas",
-    //      med: "asdsa",
-    //      desc: "asdsa"
-    // });
-
-    const [detailShown, showDetails] = useState(false);
+    });
 
     // const hideDetails = () => {
     //     const grid = document.getElementById("portfolioGrid");
@@ -55,29 +45,26 @@ export default function Portfolio() {
 
     return (
         <>
-        
-        <div className="portfolioWrapper">
-            {(typeof backendData.artworks === 'undefined') ? 
-                    <h1>loading</h1> : 
-                    backendData.artworks.map((art, i) => 
-                        { <p>{art}</p>})}
-            <div id="portfolioGrid"> 
-                {fillGrid()} 
-            </div>
-            <div id="detailsContainer" onClick={() => showDetails(false)}>
-                    <ArtworkDetail key={details.id} title={details.title} src={details.src} date={details.date} med={details.med} desc={details.desc} handleClick={() => showDetails}/>    
-            </div>
-            <Social />
-        </div> 
+            <div className="portfolioWrapper">
+                {/* {(typeof backendData.artworks === 'undefined') ? 
+                        <h1>loading</h1> : 
+                        backendData.artworks.map((art, i) => 
+                            { <p>{art}</p>})} */}
+                <div id="portfolioGrid"> 
+                    {fillGrid()} 
+                </div>
+                <div id="detailsContainer" onClick={() => showDetails(false)}>
+                        <ArtworkDetail key={details.id} title={details.title} src={details.src} date={details.date} med={details.med} desc={details.desc} handleClick={() => showDetails}/>    
+                </div>
+                <Social />
+            </div> 
         </>
     )
 
 
     function fillGrid() {
-    
-
         const cardSelect = (artInfo) => {
-            
+            console.log("Card selected");
             //updateDetails(artInfo);
             // showDetails(true);
 
@@ -91,103 +78,103 @@ export default function Portfolio() {
     
         } 
     
-        var imgs = [
+        const imgs = [
             {id: 1,
-            title: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[0].title,
-             src: "https://alexjoshuaartwork.s3.us-west-1.amazonaws.com/UploadToAWS/Idea.png",
+            title: ( backendData === null) ? "loading" : backendData[0].title,
+             src: imageData ? imageData : "",
              date: "September 1, 2022",
-             med: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[0].medium,
-             desc: "Description of the art"},
+             med: ( backendData === null) ? "loading" : backendData[0].medium,
+             Description: "Description of the art"},
             {id: 2,
-            title:(typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[1].title,
-             src: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[0].thumbnail,
-             date: "September 1, 2022",
-             med: "Pencil Sketch",
-             desc: "Description of the art"},
-            {id: 3,
-            title: (typeof backendData.artworks === 'undefined') ? "loading" : backendData.artworks[2].title,
+            title:( backendData === null) ? "loading" : backendData[1].title,
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
+            {id: 3,
+            title: ( backendData === null) ? "loading" : backendData[0].title,
+             src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+             date: "September 1, 2022",
+             med: "Pencil Sketch",
+             description: "Description of the art"},
             {id: 4,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 5,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 6,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 7,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 8,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 9,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 10,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 11,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 12,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 13,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 14,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 15,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
             {id: 16,
             title: "Abstract Faces",
              src: "https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
              date: "September 1, 2022",
              med: "Pencil Sketch",
-             desc: "Description of the art"},
+             description: "Description of the art"},
         ];
     
         // const cards = [];
@@ -198,8 +185,8 @@ export default function Portfolio() {
     
         return (
             <> 
-                {imgs.map(({ id, title, src, date, med, desc }) => (
-                    <Card key={id} title={title} src={src} alt="alt text" date={date} med={med} desc={desc} handleClick={() => cardSelect} />
+                {imgs.map(({ id, title, src, date, med, description }) => (
+                    <Card key={id} title={title} src={src} alt="alt text" date={date} med={med} desc={description} handleClick={() => cardSelect} />
                 ))}
             </>
         )

@@ -6,6 +6,7 @@
     height: 100%;
     width: 100vw;
     transition: translate 4000ms ease-in;
+    overflow: hidden;
 }
 
 #portfolioGrid {
