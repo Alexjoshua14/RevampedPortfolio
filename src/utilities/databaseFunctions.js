@@ -8,7 +8,6 @@ export async function getData() {
 }
 
 export async function getImage(imageKey) {
-    console.log(`Fetching Image ${imageKey}`)
-    const response = await axios.get(`http://localhost:5050/image/${imageKey}`, { responseType: 'blob'});
-    return response.data;
+    const response = await axios.get(`http://localhost:5050/api/image/${encodeURIComponent(imageKey)}`, { responseType: 'blob'});
+    return URL.createObjectURL(response.data);
 }

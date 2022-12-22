@@ -17,11 +17,13 @@ export default function Portfolio() {
         getData().then(
             data => {
                 setBackendData(data);
+                console.log(data);
             }
         );
-        getImage('UploadToAWS/Untitled6.jpeg').then(data => {
-            setImageData(URL.createObjectURL(data));
-        })
+        // getImage('UploadToAWS/Untitled6.jpeg').then(data => {
+        //     console.log("retrieved image?..");
+        //     setImageData(URL.createObjectURL(data));
+        // })
 
     }, []);
 
@@ -185,8 +187,10 @@ export default function Portfolio() {
     
         return (
             <> 
-                {imgs.map(({ id, title, src, date, med, description }) => (
+                {(backendData == null) ? /*imgs.map(({ id, title, src, date, med, description }) => (
                     <Card key={id} title={title} src={src} alt="alt text" date={date} med={med} desc={description} handleClick={() => cardSelect} />
+                ))*/ <h1>Loading</h1> : backendData.map(({ id, title, thumbnail, date, med, description }) => (
+                    <Card key={id} title={title} src={thumbnail} alt="alt text" date={date} med={med} desc={description} handleClick={() => cardSelect} />
                 ))}
             </>
         )
