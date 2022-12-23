@@ -24,7 +24,12 @@ export default function Card(props) {
             <h1>{props.title}</h1>
             <h2>{year}</h2>
             <div className="cardImgHolder">
-                <img src={src} alt={props.alt}/>
+                <img 
+                    src={src} 
+                    alt={props.alt} 
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
+                    />
             </div>
             
         </div>
