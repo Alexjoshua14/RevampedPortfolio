@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/RevampedPortfolio/static/css/main.51d5d96e.css",
-    "main.js": "/RevampedPortfolio/static/js/main.7737a311.js",
+    "main.css": "/RevampedPortfolio/static/css/main.ec18b3ab.css",
+    "main.js": "/RevampedPortfolio/static/js/main.a9078710.js",
     "static/js/787.1ed0c42c.chunk.js": "/RevampedPortfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/AbstractFaces.png": "/RevampedPortfolio/static/media/AbstractFaces.e8ea28c2487f5d03c103.png",
     "static/media/self.jpeg": "/RevampedPortfolio/static/media/self.94055bc76ea06eb0a469.jpeg",
@@ -24,12 +24,12 @@
     "static/media/Montserrat-Medium.ttf": "/RevampedPortfolio/static/media/Montserrat-Medium.f6584a1a193caa2ba024.ttf",
     "static/media/Montserrat-ExtraLight.ttf": "/RevampedPortfolio/static/media/Montserrat-ExtraLight.e1905a57a46849c02a4c.ttf",
     "index.html": "/RevampedPortfolio/index.html",
-    "main.51d5d96e.css.map": "/RevampedPortfolio/static/css/main.51d5d96e.css.map",
-    "main.7737a311.js.map": "/RevampedPortfolio/static/js/main.7737a311.js.map",
+    "main.ec18b3ab.css.map": "/RevampedPortfolio/static/css/main.ec18b3ab.css.map",
+    "main.a9078710.js.map": "/RevampedPortfolio/static/js/main.a9078710.js.map",
     "787.1ed0c42c.chunk.js.map": "/RevampedPortfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.51d5d96e.css",
-    "static/js/main.7737a311.js"
+    "static/css/main.ec18b3ab.css",
+    "static/js/main.a9078710.js"
   ]
 }
