@@ -1,18 +1,18 @@
 // Alex Joshua (c) 2022
 
 import './Card.css';
-import AbstractFace from "../img/AbstractFaces.png";
 import { getImage } from "../utilities/databaseFunctions";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export default function Card(props) {
     const [src, setSrc] = useState("https://images.unsplash.com/photo-1545486332-9e0999c535b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+    
     //Extract just the year and if the date was unset then
     //set it to an empty string
     const date = new Date(props.date);
     let year = date.getFullYear();
     year = (year == 1969) ? "" : year;
-    
+
     useEffect(() => {
         getImage(props.src).then(src => {
             setSrc(src);
