@@ -1,9 +1,13 @@
 :root {
   --dark: #121212;
+  --bg-primary: #121212;
+  --bg-secondary: #141516;
   --white: #FFFFFF;
+  --purple: #573280;
   --blue: #77B6EA;
   --pink: #FF007F;
   --teal: #3ADFB5;
+  --gradient: linear-gradient(-45deg, var(--purple), var(--pink), var(--blue), var(--teal));
 }
 
 body {
@@ -13,33 +17,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(-45deg, #573280, #FF007F, #77B6EA, #3ADFB5);
-	background-size: 400% 400%;
+  background-color: #121212;
   min-height: 100vh;
-	animation: gradient 15s ease infinite;
   overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-a:-webkit-any-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 /* Group 1 */
@@ -66,6 +51,11 @@ a:-webkit-any-link {
 .b3 {
   background: var(--teal);
   background-blend-mode: color-dodge;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 @supports(padding:max(0px)) {
