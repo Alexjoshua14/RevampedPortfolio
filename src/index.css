@@ -1,8 +1,10 @@
 :root {
-  --dark: #121212;
+  --dark: #141516;
   --bg-primary: #121212;
-  --bg-secondary: #141516;
+  --bg-secondary: #18191A;
+  --bg-tertiary: #1C1D1D;
   --white: #FFFFFF;
+  --secondary-white: #ADB7C1;
   --purple: #573280;
   --blue: #77B6EA;
   --pink: #FF007F;

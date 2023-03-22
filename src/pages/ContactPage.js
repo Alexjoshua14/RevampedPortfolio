@@ -53,7 +53,6 @@ export default function ContactPage() {
                         <button type="submit" id="send">Send</button>
                     </form> 
                 </div>
-                <Social />
             </div>
         </>
     );

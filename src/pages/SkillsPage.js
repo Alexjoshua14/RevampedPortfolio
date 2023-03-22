@@ -34,7 +34,6 @@ export default function SkillsPage() {
                         </ul>
                     </div>
                 </div>
-                <Social />
             </div>
         </>
     )

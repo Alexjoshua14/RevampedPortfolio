@@ -46,7 +46,6 @@ export default function Portfolio() {
                 <div id="detailsContainer" onClick={() => showDetails(false)}>
                         <ArtworkDetail key={details.id} title={details.title} src={details.src} date={details.date} med={details.med} desc={details.desc} handleClick={() => showDetails}/>    
                 </div>
-                <Social />
             </div> 
         </>
     )

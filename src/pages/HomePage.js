@@ -6,7 +6,7 @@ import { TypeAnimation } from'react-type-animation';
 
 export default function HomePage() {
     return (
-        <div className="container mainContent">
+        <div className="container-fluid mainContent">
             <div className="row" id="main-title">
                 Hey, I'm
                 <br/>Alex Joshua
@@ -14,7 +14,6 @@ export default function HomePage() {
             {/* <div class="selfieHolder">
                 <img src={self} class="selfieImg"></img>
             </div> */}
-            <Social />
         </div>
     )
 }

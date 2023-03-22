@@ -13,7 +13,7 @@ export default function NavBar() {
     return (
         <nav className="navbar navbar-expand-sm sticky-top shadow-sm"> 
             <div className="container-fluid">
-                <NavLink to="/" className="nav-link navbar-brand active" id="navbar-logo">
+                <NavLink to="/" className="nav-link navbar-brand" id="navbar-logo" onClick={collapse}>
                     AVCJ
                 </NavLink>
                 <button className="navbar-toggler navbar-button" 

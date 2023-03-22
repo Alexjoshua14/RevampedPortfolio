@@ -7,6 +7,7 @@ import SkillsPage from './pages/SkillsPage';
 import NavBar from './nav/NavBar';
 import Portfolio from './pages/Portfolio';
 import UnderConstruction from './pages/UnderConstruction';
+import Social from './socialLinks/social.js';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </main>
-    </div>
+      <Social />
+    </div> 
   );
 }
