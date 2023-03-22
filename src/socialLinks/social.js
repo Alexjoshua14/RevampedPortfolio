@@ -3,7 +3,8 @@ import './social.css';
 
 export default function Social() {
     return (
-        <div className="container">
+        <div className="container-fluid">
+            
             <div className="row social-row">
                 <div className="col">
                     <a href="https://github.com/Alexjoshua14" target="_blank">
