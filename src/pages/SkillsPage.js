@@ -6,11 +6,11 @@ export default function SkillsPage() {
     return (
         <>
             <div className="container">
-                <div className="row" >
+                <div className="row skills-page-title" >
                     <h1 id="title">Skills</h1>
                 </div>
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-sm-6 col-xs-12 g-4">
                         <div className="row skills-title">
                             <h2>Computer Science</h2>
                         </div>
@@ -28,7 +28,7 @@ export default function SkillsPage() {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-sm-6 col-xs-12 g-2 g-sm-4">
                         <div className="row skills-title">
                             <h2>Studio Art</h2>
                         </div>

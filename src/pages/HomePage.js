@@ -8,8 +8,8 @@ export default function HomePage() {
     return (
         <div className="container-fluid mainContent">
             <div className="row" id="main-title">
-                Hey, I'm
-                <br/>Alex Joshua
+                <h2>Hey, I'm</h2>
+                <h1>Alex Joshua</h1>
             </div>
             {/* <div class="selfieHolder">
                 <img src={self} class="selfieImg"></img>

@@ -1,9 +1,16 @@
-.skills-list ul {
+.skills-page-title {
     color: var(--white);
-    -webkit-text-fill-color: var(--white);
+    text-align: center;
+}
+
+.skills-title {
+    color: var(--white);
+    text-align: center;
 }
 
 .skills-list li {
-    color: var(--white);
-    -webkit-text-fill-color: var(--white);
+    color: var(--secondary-white);
+    -webkit-text-fill-color: var(--secondary-white);
+    list-style-type: none;
+    text-align: center;
 }

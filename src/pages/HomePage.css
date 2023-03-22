@@ -5,6 +5,15 @@
     background-clip: text;
     color: transparent;
     font-size: 5.9rem;
+	text-align: center;
+}
+
+#main-title h1 {
+	font-size: 6rem;
+}
+
+#main-title h2 {
+	font-size: 3rem;
 }
 
 @keyframes gradient {

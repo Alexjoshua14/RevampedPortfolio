@@ -8,17 +8,16 @@
 #content {
   display: flex;
   flex-grow: 1;
-  margin-top: 6vh;
-  padding-top: 6vh;
   min-height: fit-content;
   justify-content: center;
+  align-items: center;
 }
 
-.mainContent {
+/* .mainContent {
     display: flex;
     flex-wrap: wrap;
     min-height: inherit;
     justify-content: center;
     align-items: center;
-}
+} */
 
