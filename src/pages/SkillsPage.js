@@ -11,7 +11,7 @@ export default function SkillsPage() {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <div className="row">
+                        <div className="row skills-title">
                             <h2>Computer Science</h2>
                         </div>
                         <div className="row skills-list">
@@ -29,10 +29,10 @@ export default function SkillsPage() {
                         </div>
                     </div>
                     <div className="col-6">
-                        <div className="row">
+                        <div className="row skills-title">
                             <h2>Studio Art</h2>
                         </div>
-                        <div className="row">
+                        <div className="row skills-list">
                             <ul>
                                 <li>Architecture</li>
                                 <li>Charcoal Drawing</li>

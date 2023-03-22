@@ -6,7 +6,5 @@
 
 .card-body {
     text-align: center;
-    background-color: white;
-    background-clip: text;
-    color: transparent;
+    color: var(--white)
 }

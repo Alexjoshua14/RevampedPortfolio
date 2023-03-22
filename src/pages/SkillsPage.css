@@ -1,7 +1,9 @@
 .skills-list ul {
-    color: white;
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
 }
 
 .skills-list li {
-    color: white;
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
 }

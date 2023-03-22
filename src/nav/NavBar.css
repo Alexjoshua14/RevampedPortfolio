@@ -26,11 +26,13 @@
 
 .nav-option {
     color: var(--white);
+    -webkit-text-fill-color: var(--white);
     transition: transform 200ms ease-in;
 }
 
 .nav-option:hover {
     color: var(--pink);
+    -webkit-text-fill-color: var(--pink);
 }
 /* 
 .nav-option:focus {
