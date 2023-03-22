@@ -20,7 +20,7 @@ export default function ContactPage() {
     const handleSubmit = (e) => {
         console.log("Sending message to creator");
 
-        e.preventDefault();
+        e.preventDefault(); 
         send(
             'service_atisjtd',
             'template_2hsgujo',
@@ -37,21 +37,36 @@ export default function ContactPage() {
 
     return (
         <>
-            <div className="mainContent" >
-                <div className="glassCard" id="contactContent">
+            <div className="container-fluid" >
+                <div className="row">
                     <h1 id="title">Say hey!</h1>
-                    <form onSubmit={handleSubmit}>
-                        <label id="name">Name</label>
-                        <input type="text" name="name" value={toSend["name"]} onChange={handleChange} aria-required="true" required></input>
-                        
-                        <label id="email">Email</label>
-                        <input type="email" name="email" value={toSend["email"]} onChange={handleChange} aria-required="true" required></input>
+                </div>
+                <div className="row justify-content-center">
+                    <div className="col-10 col-sm-8 col-md-6 col-lg-5">
+                        <form class="needs-validation" onSubmit={handleSubmit} novalidate>
+                            <div class="mb-3">
+                                <label className="form-label" id="name">Name</label>
+                                <input className="form-control" type="text" name="name" value={toSend["name"]} onChange={handleChange} aria-required="true" required></input>
+                            </div>
+                            <div class="mb-3">
+                                <label className="form-label" id="email">Email</label>
+                                <input className="form-control" type="email" name="email" value={toSend["email"]} onChange={handleChange} aria-required="true" required></input>
+                                {/* <div className="invalid-feedback">
+                                    Please enter a valid email
+                                </div> */}
+                            </div>
 
-                        <label id="msgLabel">Message</label>
-                        <textarea type="text" wrap="soft" name="message" value={toSend["message"]} onChange={handleChange} aria-required="true" required></textarea>
+                            <div class="mb-3">
+                                <label className="form-label" id="msgLabel">Message</label>
+                                <textarea className="form-control" type="text" wrap="soft" name="message" value={toSend["message"]} onChange={handleChange} aria-required="true" rows="5" required></textarea>
+                                {/* <div className="invalid-feedback">
+                                    Please enter a message in the textarea.
+                                </div> */}
+                            </div>
 
-                        <button type="submit" id="send">Send</button>
-                    </form> 
+                            <button className="btn btn-primary submit-btn" type="submit" id="send">Send</button>
+                        </form> 
+                    </div>
                 </div>
             </div>
         </>

@@ -7,6 +7,7 @@
   --secondary-white: #ADB7C1;
   --purple: #573280;
   --blue: #77B6EA;
+  --blue-dark: #45647E;
   --pink: #FF007F;
   --teal: #3ADFB5;
   --gradient: linear-gradient(-45deg, var(--purple), var(--pink), var(--blue), var(--teal));
