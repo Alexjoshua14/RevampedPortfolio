@@ -5,7 +5,7 @@ import { getImage } from "../utilities/databaseFunctions";
 import { useState, useEffect, useMemo } from 'react';
 
 export default function Card(props) {
-    const [src, setSrc] = useState("https://images.unsplash.com/photo-1679471491129-9e2f3ea6ec3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    const [src, setSrc] = useState("https://images.unsplash.com/photo-1670851030047-2cf3dca9afe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
     
     //Extract just the year and if the date was unset then
     //set it to an empty string
