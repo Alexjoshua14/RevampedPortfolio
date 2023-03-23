@@ -7,20 +7,26 @@ import SkillsPage from './pages/SkillsPage';
 import NavBar from './nav/NavBar';
 import Portfolio from './pages/Portfolio';
 import UnderConstruction from './pages/UnderConstruction';
+import Social from './socialLinks/social.js';
 
 export default function App() {
+  const documentHeight = () => {
+    document.documentElement.style.setProperty('--doc-height', `${window.innerHeight/100}px`)
+  }
+
   return (
     <div className="App">
       <NavBar />
-      <main id="content">
+      <main id="content"> 
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />} />
-          <Route path="/portfolio" element={<UnderConstruction />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </main>
-    </div>
+      <Social />
+    </div> 
   );
 }

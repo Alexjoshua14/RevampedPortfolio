@@ -7,7 +7,6 @@ export default function HomePage() {
             <div className="glassCard" id="welcomeCard">
                 <h1>This page is currently under construction.</h1>
             </div>
-            <Social />
         </div>
     )
 }

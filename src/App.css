@@ -1,39 +1,13 @@
 .App {
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 #content {
   display: flex;
   flex-grow: 1;
-  margin-top: 6vh;
-  padding-top: 6vh;
   min-height: fit-content;
   justify-content: center;
-}
-
-.mainContent {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: inherit;
-    justify-content: center;
-    align-items: center;
-}
-
-.glassCard {
-  /* background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%); */
-  background-color: rgba(255, 255, 255, 0.142);
-  opacity: .95;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(70%);
-  border-radius: 1rem;
-  padding: 3vh 3vw;
-  /* background-color: forestgreen;
-  mix-blend-mode: color-burn; */
-}
-
-.glassCard h1, h2, h3, p, li {
-  mix-blend-mode: color-burn;
+  align-items: center;
 }
