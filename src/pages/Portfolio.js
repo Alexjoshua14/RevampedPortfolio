@@ -9,10 +9,10 @@ import Social from '../socialLinks/social';
 import { getData, getImage } from "../utilities/databaseFunctions";
 
 export default function Portfolio() {
-    const [backendData, setBackendData] = useState(null);
-    // const [backendData, setBackendData] = useState([
-    //     {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}
-    // ]);
+    // const [backendData, setBackendData] = useState(null);
+    const [backendData, setBackendData] = useState([
+        {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}
+    ]);
 
     const [detailShown, showDetails] = useState(false);
     useEffect(() => {
@@ -43,7 +43,7 @@ export default function Portfolio() {
     return (
         <>
             <div className="container-fluid grid-wrapper">
-                <div className="row justify-content-center portfolio-row">
+                <div className="row justify-content-center">
                     {fillGrid()}
                 </div>
             </div>
