@@ -43,7 +43,7 @@ export default function Portfolio() {
     return (
         <>
             <div className="container-fluid grid-wrapper">
-                <div className="row justify-content-center">
+                <div className="row justify-content-center portfolio-row">
                     {fillGrid()}
                 </div>
             </div>

@@ -1,6 +1,11 @@
 .grid-wrapper {
     padding-bottom: 25px;
 }
+
+.portfolio-row {
+    align-items: center;
+}
+
 /*
 #detailsContainer {
     position: absolute;
