@@ -1,26 +1,7 @@
-.portfolioWrapper {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    flex: column;
-    height: 100%;
-    width: 100vw;
-    transition: translate 4000ms ease-in;
-    overflow-x: hidden;
+.grid-wrapper {
+    padding-bottom: 25px;
 }
-
-#portfolioGrid {
-    width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 18rem));
-    grid-template-rows: repeat(auto-fill, 2fr);
-    gap: 2rem;
-    height: min-content;
-    justify-content: center;
-    justify-items: center;
-    margin-bottom: 6vh;
-}
-
+/*
 #detailsContainer {
     position: absolute;
     top: 40vh;
@@ -43,4 +24,4 @@
     100% { 
         left: 0;
     }
-}
+} */

@@ -1,8 +1,7 @@
 .App {
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 #content {
@@ -12,12 +11,3 @@
   justify-content: center;
   align-items: center;
 }
-
-/* .mainContent {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: inherit;
-    justify-content: center;
-    align-items: center;
-} */
-

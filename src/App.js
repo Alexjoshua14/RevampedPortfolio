@@ -10,6 +10,10 @@ import UnderConstruction from './pages/UnderConstruction';
 import Social from './socialLinks/social.js';
 
 export default function App() {
+  const documentHeight = () => {
+    document.documentElement.style.setProperty('--doc-height', `${window.innerHeight/100}px`)
+  }
+
   return (
     <div className="App">
       <NavBar />

@@ -10,7 +10,6 @@ form label {
 
 form textarea {
     resize: none;
-    
 }
 
 form .submit-btn:disabled {

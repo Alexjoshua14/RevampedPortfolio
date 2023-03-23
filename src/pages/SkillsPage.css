@@ -9,8 +9,8 @@
 }
 
 .skills-list li {
-    color: var(--secondary-white);
-    -webkit-text-fill-color: var(--secondary-white);
+    color: var(--white-secondary);
+    -webkit-text-fill-color: var(--white-secondary);
     list-style-type: none;
     text-align: center;
 }

@@ -35,6 +35,5 @@
     height: 2.5rem;
     width: auto;
     vertical-align: middle;
-    /* background-color: yellow; */
-    
+    color: var(--white-secondary);   
 }

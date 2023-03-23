@@ -10,9 +10,9 @@ import { getData, getImage } from "../utilities/databaseFunctions";
 
 export default function Portfolio() {
     const [backendData, setBackendData] = useState(null);
+
     const [detailShown, showDetails] = useState(false);
     useEffect(() => {
-        console.log("Running use Effect");
         getData().then(
             data => {
                 setBackendData(data);
@@ -39,14 +39,16 @@ export default function Portfolio() {
 
     return (
         <>
-            <div className="portfolioWrapper">
-                <div id="portfolioGrid"> 
-                    {fillGrid()} 
+            <div className="container-fluid grid-wrapper">
+                <div className="row justify-content-center">
+                    {fillGrid()}
                 </div>
-                <div id="detailsContainer" onClick={() => showDetails(false)}>
+            </div>
+
+                {/* <div id="detailsContainer" onClick={() => showDetails(false)}>
                         <ArtworkDetail key={details.id} title={details.title} src={details.src} date={details.date} med={details.med} desc={details.desc} handleClick={() => showDetails}/>    
-                </div>
-            </div> 
+                </div> */}
+            {/* </div>  */}
         </>
     )
 

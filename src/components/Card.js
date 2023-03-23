@@ -13,6 +13,7 @@ export default function Card(props) {
     let year = date.getFullYear();
     year = (year == 1969) ? "" : year;
 
+    /** NEED THIS FUNCTION FOR PRODUCTION */
     useEffect(() => {
         getImage(props.src).then(src => {
             setSrc(src);
@@ -20,18 +21,21 @@ export default function Card(props) {
     }, []);
 
     return(
-        <div onClick={props.handleClick(props)} className="glassCard cardWrapper">
-            <h1>{props.title}</h1>
-            <h2>{year}</h2>
-            <div className="cardImgHolder">
-                <img 
-                    src={src} 
-                    alt={props.alt} 
-                    onContextMenu={(e) => e.preventDefault()}
-                    onDragStart={(e) => e.preventDefault()}
-                    />
+        <div className="col-auto g-5">
+            <div className="card shadow-sm" onClick={props.handleClick(props)}>
+                <div className="card-body">
+                    <h2 className="card-title">{props.title}</h2>
+                    <h6 className="card-subtitle">{year}</h6>
+                    <img 
+                        className="card-img"
+                        src={src} 
+                        alt={props.alt} 
+                        onContextMenu={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
+                        />
+                </div>
+
             </div>
-            
         </div>
     )
 }
