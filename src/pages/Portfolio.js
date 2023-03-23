@@ -10,6 +10,9 @@ import { getData, getImage } from "../utilities/databaseFunctions";
 
 export default function Portfolio() {
     const [backendData, setBackendData] = useState(null);
+    // const [backendData, setBackendData] = useState([
+    //     {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}, {title: "testing", date: "2/22/22", src: ""}
+    // ]);
 
     const [detailShown, showDetails] = useState(false);
     useEffect(() => {
